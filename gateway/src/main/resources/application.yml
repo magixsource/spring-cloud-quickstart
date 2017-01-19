@@ -1,0 +1,13 @@
+spring:
+    application.name: api-gateway
+server:
+    port: 8080
+# routes to serviceId
+zuul:
+    routes:
+        api-greeting:
+            path: /api-greeting/**
+            serviceId: greeting-service
+eureka:
+    client:
+        serviceUrl.defaultZone: http://localhost:8761/eureka/
